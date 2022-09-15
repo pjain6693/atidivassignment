@@ -1,12 +1,13 @@
 import { useState } from "react";
 const UserList = (props) => {
-  const [currentValue, setCurrentValue] = useState();
+  const [currentValue, setCurrentValue] = useState(props.userList[0].team);
 
   const dropdownValueChangeHandler = (event) => {
     setCurrentValue(event.target.value);
+    alert(event.target.value);
   };
 
-  alert(currentValue);
+  
   return (
     <div>
       <select value={currentValue} onChange={dropdownValueChangeHandler}>
